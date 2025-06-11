@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/CSS/style.css">
-    <title>MDBR Quiz</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="Assets/CSS/style.css" />
+        <title>MDBR Quiz</title>
+    </head>
+    <body>
+        <header>
+            <div class="head">
+                <h1>MDBR Quiz</h1>
+            </div>
+        </header>
 
-    <header>
-        <div class="head">
-            <h1>MDBR Quiz</h1>
+        <div class="container">
+            <div class="quiz-container">
+                <div class="question">
+                    <h2>Question 1</h2>
+                    <p>What is the capital of France?</p>
+                </div>
+                <div class="answers">
+                    <button type="button"  class="ans">Paris</button>
+                    <button type="button"  class="ans">London</button>
+                    <button type="button"  class="ans">Berlin</button>
+                    <button type="button"  class="ans">Madrid</button>
+                </div>
+                <div class="quiz-btn">
+                    <button type="button"  class="next-btn">Next</button>
+                </div>
+                <div class="quiz-explain">
+                    <h2>Explanation</h2>
+                    <p>The capital of France is Paris.</p>
+                </div>
+            </div>
+
+            <div class="quiz-count">
+                <div class="timer">30s</div>
+                <div class="count">
+                    <div class="q-count correct">1</div>
+                    <div class="q-count correct">2</div>
+                    <div class="q-count wrong">3</div>
+                    <div class="q-count correct">4</div>
+                    <div class="q-count correct">5</div>
+                    <div class="q-count wrong">6</div>
+                    <div class="q-count correct">7</div>
+                    <div class="q-count correct">8</div>
+                    <div class="q-count wrong">9</div>
+                    <div class="q-count correct">10</div>
+                    <div class="q-count correct">11</div>
+                    <div class="q-count correct">12</div>
+                    <div class="q-count current">13</div>
+                    <div class="q-count">14</div>
+                    <div class="q-count">15</div>
+                    <div class="q-count">16</div>
+                    <div class="q-count">17</div>
+                    <div class="q-count">18</div>
+                    <div class="q-count">19</div>
+                    <div class="q-count">20</div>
+                    <div class="q-count">21</div>
+                    <div class="q-count">22</div>
+                    <div class="q-count">23</div>
+                    <div class="q-count">24</div>
+                    <div class="q-count">25</div>
+                </div>
+
+
+            </div>
         </div>
-    </header>
 
-    <div class="container">
-
-        <div class="quiz-container">
-            <div class="question">
-                <h2>Question 1</h2>
-                <p>What is the capital of France?</p>
-            </div>
-            <div class="answers">
-                <button class="ans">Paris</button>
-                <button class="ans">London</button>
-                <button class="ans">Berlin</button>
-                <button class="ans">Madrid</button>
-            </div>
-            <div class="quiz-btn">
-                <button class="btn btn-primary">Next</button>
-            </div>
-            <div class="quiz-explain">
-                <h2>Explanation</h2>
-                <p>The capital of France is Paris.</p>
-            </div>
-        </div>
-
-        <div class="quiz-count">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, natus sint? Vel nobis pariatur temporibus itaque at ipsam sapiente quasi quas distinctio qui, a necessitatibus, sint architecto reprehenderit, officia natus.
-        </div>
-
-    </div>
-    
-</body>
+        <script src="Assets/JS/script.js"></script>
+    </body>
 </html>
