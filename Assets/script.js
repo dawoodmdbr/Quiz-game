@@ -8,6 +8,8 @@ const questionNum = questions.length;
 let qDone = new Array(questions.length).fill(false);
 let score = 0;
 let index;
+let timeLeft = 30;
+let timerInterval;
 
 const questionH = document.querySelector(".question h2");
 const questionP = document.querySelector(".question p");
@@ -17,6 +19,7 @@ const nextBtn = document.querySelector(".next-btn");
 const explain = document.querySelector(".quiz-explain");
 const explainP = explain.querySelector("p");
 const qCountBoxes = document.querySelectorAll(".q-count");
+const timers = document.querySelectorAll(".timer");
 
 function loadQuestion() {
     do {
@@ -36,9 +39,10 @@ function loadQuestion() {
         btn.classList.remove("correct", "wrong");
     });
     updateCountTracker();
-}
+    startTimer();
 
-loadQuestion();
+    console.log(index);
+}
 
 function handleAnswer(e) {
     const selectedBtn = e.target;
@@ -60,21 +64,44 @@ function handleAnswer(e) {
     explainP.textContent = questions[index].explanation;
     explain.style.display = "block";
     nextBtn.style.display = "block";
+    stopTimer();
 }
 
-ans.forEach((btn) => {
-    btn.addEventListener("click", handleAnswer);
-});
+function startTimer() {
+    let timeLeft = 15;
+    timers.forEach((timer) => {
+        timer.textContent = `${timeLeft}s`;
+    });
 
-nextBtn.addEventListener("click", () => {
-    questionIndex++;
-    if (questionIndex < 10) {
-        loadQuestion();
-    } else {
-        updateCountTracker();
-        endQuiz();
-    }
-});
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timers.forEach((timer) => {
+            timer.textContent = `${timeLeft}s`;
+        });
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            lockAnswers();
+            showExplain();
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function showExplain() {
+    explainP.textContent = questions[index].explanation;
+    explain.style.display = "block";
+    nextBtn.style.display = "block";
+}
+
+function lockAnswers() {
+    const correctIndex = questions[index].correctIndex;
+    ans[correctIndex].classList.add("correct");
+    qCountBoxes[questionIndex].classList.add("wrong");
+}
 
 function updateCountTracker() {
     qCountBoxes.forEach((box, i) => {
@@ -94,3 +121,19 @@ function endQuiz() {
     } correctly.`;
     explain.style.display = "block";
 }
+
+loadQuestion();
+
+ans.forEach((btn) => {
+    btn.addEventListener("click", handleAnswer);
+});
+
+nextBtn.addEventListener("click", () => {
+    questionIndex++;
+    if (questionIndex < 10) {
+        loadQuestion();
+    } else {
+        updateCountTracker();
+        endQuiz();
+    }
+});
