@@ -1,8 +1,3 @@
-Got it, Dawood! Here's the full content ready to drop directly into a `README.md` file — includes setup instructions, how to play, and all the flair:
-
----
-
-````markdown
 # 🧠 MDBR Quiz App
 
 Welcome to **MDBR Quiz** – a clean, fast, and fun browser-based quiz game built with plain HTML, CSS, and JavaScript. Whether you're flexing your brain cells or just killing time, this app’s got your back.
@@ -12,11 +7,12 @@ Welcome to **MDBR Quiz** – a clean, fast, and fun browser-based quiz game buil
 ## 🎯 What It Does
 
 MDBR Quiz randomly serves **10 multiple-choice questions** from a question pool, each with:
-- A **15-second timer** to keep the pressure real 🔥
-- **4 options** per question
-- **Instant feedback** (color-coded for that sweet dopamine hit)
-- A **detailed explanation** after every answer
-- A question tracker to show how far you’ve come
+
+* A **15-second timer** to keep the pressure real 🔥
+* **4 options** per question
+* **Instant feedback** (color-coded for that sweet dopamine hit)
+* A **detailed explanation** after every answer
+* A question tracker to show how far you’ve come
 
 Oh, and it’s fully **responsive** – looks just as smooth on mobile as it does on desktop.
 
@@ -25,9 +21,10 @@ Oh, and it’s fully **responsive** – looks just as smooth on mobile as it doe
 ## 🛠️ Tech Stack
 
 This project keeps it lightweight and simple:
-- **HTML5** – for structure
-- **CSS3** – for stylish, responsive vibes
-- **Vanilla JavaScript** – for all the quiz logic, timers, scoring, and DOM magic
+
+* **HTML5** – for structure
+* **CSS3** – for stylish, responsive vibes
+* **Vanilla JavaScript** – for all the quiz logic, timers, scoring, and DOM magic
 
 No libraries. No frameworks. Just raw, clean code.
 
@@ -37,10 +34,10 @@ No libraries. No frameworks. Just raw, clean code.
 
 ### Option 1: Clone the Repo
 
-```bash
+```
 git clone https://github.com/your-username/mdbr-quiz.git
 cd mdbr-quiz
-````
+```
 
 Then open `index.html` in your browser.
 
@@ -68,14 +65,14 @@ That’s it. You’re in.
 
 ## 📁 File Structure
 
-```bash
+```
 mdbr-quiz/
 │
-├── index.html             # Main HTML structure
+├── index.html             # Main HTML structure  
 ├── Assets/
-│   ├── style.css          # All the CSS styling
-│   ├── script.js          # JavaScript logic (core engine)
-│   └── questions.js       # Question bank (MCQs + answers + explanations)
+│   ├── style.css          # All the CSS styling  
+│   ├── script.js          # JavaScript logic (core engine)  
+│   └── questions.js       # Question bank (MCQs + answers + explanations)  
 ```
 
 ---
@@ -112,10 +109,3 @@ Drop a ⭐ on the repo – it really helps!
 Yes, the timer does haunt you.
 No, I won't remove it.
 **Git good. 😎**
-
-```
-
----
-
-Just save this as `README.md` in your repo root, and you're golden. Let me know if you want badges (like GitHub Pages deploy or top language), too!
-```
