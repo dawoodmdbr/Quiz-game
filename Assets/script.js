@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const heightToCopy = document.querySelector(".question").offsetHeight;
-    document.querySelector(".timer").style.height = heightToCopy + "px";
+    document.querySelector("#pc").style.height = heightToCopy + "px";
 });
-
-console.log(questions.length);
-
 
 let questionIndex = 0;
 const questionNum = questions.length;
@@ -22,10 +19,6 @@ const explainP = explain.querySelector("p");
 const qCountBoxes = document.querySelectorAll(".q-count");
 
 function loadQuestion() {
-    if (qDone.every((done) => done)) {
-        endQuiz(); // All questions done
-    }
-
     do {
         index = Math.floor(Math.random() * questionNum);
     } while (qDone[index]);
@@ -42,6 +35,7 @@ function loadQuestion() {
         btn.textContent = q.options[i];
         btn.classList.remove("correct", "wrong");
     });
+    updateCountTracker();
 }
 
 loadQuestion();
@@ -77,6 +71,7 @@ nextBtn.addEventListener("click", () => {
     if (questionIndex < 10) {
         loadQuestion();
     } else {
+        updateCountTracker();
         endQuiz();
     }
 });
