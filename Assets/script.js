@@ -21,6 +21,14 @@ const explainP = explain.querySelector("p");
 const qCountBoxes = document.querySelectorAll(".q-count");
 const timers = document.querySelectorAll(".timer");
 
+const sounds = {
+    correct: new Audio("Assets/audio/correct.mp3"),
+    wrong: new Audio("Assets/audio/wrong.mp3"),
+    click: new Audio("Assets/audio/click.mp3"),
+    //   timer: new Audio("Assets/audio/timer.mp3"),
+};
+let soundOn = true;
+
 function loadQuestion() {
     do {
         index = Math.floor(Math.random() * questionNum);
@@ -54,11 +62,13 @@ function handleAnswer(e) {
     if (selectedIndex == correctIndex) {
         selectedBtn.classList.add("correct");
         qCountBoxes[questionIndex].classList.add("correct");
+        playSound("correct");
         score++;
     } else {
         selectedBtn.classList.add("wrong");
         ans[correctIndex].classList.add("correct");
         qCountBoxes[questionIndex].classList.add("wrong");
+        playSound("wrong");
     }
 
     explainP.textContent = questions[index].explanation;
@@ -103,6 +113,12 @@ function lockAnswers() {
     qCountBoxes[questionIndex].classList.add("wrong");
 }
 
+function playSound(name) {
+    if (!soundOn || !sounds[name]) return;
+    sounds[name].currentTime = 0; // rewind
+    sounds[name].play();
+}
+
 function updateCountTracker() {
     qCountBoxes.forEach((box, i) => {
         box.classList.remove("current");
@@ -129,6 +145,7 @@ ans.forEach((btn) => {
 });
 
 nextBtn.addEventListener("click", () => {
+    playSound("click");
     questionIndex++;
     if (questionIndex < 10) {
         loadQuestion();
