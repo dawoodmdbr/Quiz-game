@@ -154,3 +154,12 @@ nextBtn.addEventListener("click", () => {
         endQuiz();
     }
 });
+
+
+
+function applyThemeBasedOnSystem() {
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.body.classList.add(isDark ? 'dark': 'light');
+}
+
+//applyThemeBasedOnSystem();

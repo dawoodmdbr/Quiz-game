@@ -8,6 +8,10 @@ body {
     background-color: #f0f0f0;
     color: #333;
 }
+body.dark {
+    background-color: #1a1a1a;
+    color: #ccc;
+}
 .head {
     background-color: #01baef;
     color: white;
@@ -23,7 +27,7 @@ body {
 .head h1 {
     text-align: center;
     cursor: pointer;
-    color: #f3f6fe;
+    color: #f0f0f0;
     font-size: 2rem;
     padding: 1rem;
     border-radius: 1rem;
