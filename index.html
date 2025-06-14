@@ -3,18 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="Assets/CSS/index.css">
+        <link rel="stylesheet" href="Assets/CSS/index.css" />
         <title>MDBR Quiz</title>
     </head>
     <body>
+        <div class="head">
+            <h1>MDBR Quiz</h1>
+        </div>
 
-            <div class="head">
-                <h1>MDBR Quiz</h1>
-            </div>
+        <div class="btn" style="display: none;">
+            <a href="#">Start Quiz</a>
+        </div>
 
-            <div class="btn">
-                <a href="#">Start Quiz</a>
-            </div>
-
+        <script>
+            setTimeout(() => {
+                const btn = document.querySelector(".btn");
+                btn.style.display = "flex";
+                btn.querySelector("a").style.animation =
+                    "start 500ms ease-in-out forwards";
+            }, 2500);
+        </script>
     </body>
 </html>

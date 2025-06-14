@@ -12,17 +12,27 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: #01baef;
+
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bolder;
+
     padding: 1rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 1;
     animation: head 1s ease-in-out 0.5s 1 normal forwards;
 }
 @keyframes head{
+    0%{
+        font-size: 5rem;
+        height: 100vh;
+    }
     100%{
+        font-size: 1.5rem;
         height: 10vh;
     }
 }
@@ -47,14 +57,15 @@ body{
 }
 
 .btn{
-    display: flex;
+    display: none;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     padding: 5rem;
+    z-index: -1;
 }
 
 .btn a{
-    text-align: center;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border: solid 0.25rem #01baef;
@@ -64,16 +75,62 @@ body{
     padding: 2rem 4rem;
     border-radius: 4rem;
     cursor: pointer;
-    animation: start 1s ease-in-out 2s 1 normal forwards;
+    overflow: hidden;
+    position: relative;
+    transition: all 250ms ease-in-out;
+
 }
+
+.btn a:hover{
+    color: white;
+    transition: all 250ms ease-in-out;
+}
+
 @keyframes start {
-    0%{
-        display: none;
+    0% {
         opacity: 0;
-        transform: scale(0.75);
+        transform: scale(0.5);
     }
-    100%{
-        display: block;
+    100% {
+        opacity: 1;
         transform: scale(1);
     }
 }
+
+.btn a::before{
+    content: '';
+    background-color: #01baef;
+
+    position: absolute;
+    z-index: -1;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 1rem;
+    width: 0;
+    height: 0;
+
+    transition: all 250ms ease-in-out;
+}
+.btn a:hover::before{
+    transition: all 250ms ease-in-out;
+    animation: hover 500ms ease-in-out 0s normal forwards;
+}
+@keyframes hover {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    50%{
+        color: white;
+        width: 1%;
+        height: 100%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+
