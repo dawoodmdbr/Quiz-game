@@ -28,7 +28,7 @@ body{
 }
 @keyframes head{
     0%{
-        font-size: 5rem;
+        font-size: 4rem;
         height: 100vh;
     }
     100%{
@@ -134,3 +134,17 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+    .head {
+        height: 50vh;
+        font-size: 1.5rem;
+    }
+    .btn a {
+        font-size: 2rem;
+        padding: 1rem 2rem;
+    }
+    .btn {
+        height: 80vh;
+    }
+    
+}
