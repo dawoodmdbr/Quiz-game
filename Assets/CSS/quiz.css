@@ -5,7 +5,7 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
+    background-color: white;
     color: #333;
 }
 body.dark {
@@ -13,10 +13,11 @@ body.dark {
     color: #ccc;
 }
 .head {
+    height: 10vh;
     background-color: #01baef;
     color: white;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bolder;
     padding: 1rem;
     display: flex;
@@ -26,10 +27,9 @@ body.dark {
 
 .head h1 {
     text-align: center;
-    cursor: pointer;
-    color: #f0f0f0;
-    font-size: 2rem;
-    padding: 1rem;
+    cursor: default;
+    color: white;
+    padding: 0.5rem 2rem;
     border-radius: 1rem;
     transition: all 300ms ease-in-out;
 }
@@ -39,6 +39,10 @@ body.dark {
     color: #01baef;
     transition: all 300ms ease-in-out;
     transform: scale(1.125);
+}
+
+.head h1:active {
+    transform: scale(0.75);
 }
 
 .container {
@@ -87,6 +91,7 @@ body.dark {
     transform: scale(1.05);
 }
 
+
 .quiz-btn {
     display: flex;
     justify-content: center;
@@ -100,14 +105,15 @@ body.dark {
     background-color: #01baef;
     color: white;
     border-radius: 1rem;
+    cursor: pointer;
     transition: all 200ms ease-in-out;
 }
 .next-btn:hover {
     transition: all 200ms ease-in-out;
-    color: white;
-    background-color: #01baef;
-    transform: scale(1.125);
-    cursor: pointer;
+}
+.next-btn:active {
+    transition: all 100ms ease-in-out;
+    transform: scale(0.90);
 }
 
 .quiz-explain {

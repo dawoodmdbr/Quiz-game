@@ -22,9 +22,9 @@ const qCountBoxes = document.querySelectorAll(".q-count");
 const timers = document.querySelectorAll(".timer");
 
 const sounds = {
-    correct: new Audio("Assets/audio/correct.mp3"),
-    wrong: new Audio("Assets/audio/wrong.mp3"),
-    click: new Audio("Assets/audio/click.mp3"),
+    correct: new Audio("../audio/correct.mp3"),
+    wrong: new Audio("../audio/wrong.mp3"),
+    click: new Audio("../audio/click.mp3"),
     //   timer: new Audio("Assets/audio/timer.mp3"),
 };
 let soundOn = true;
