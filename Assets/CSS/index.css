@@ -46,12 +46,12 @@ body{
     transition: all 300ms ease-in-out;
 }
 
-.head h1:hover {
+/* .head h1:hover {
     background-color: white;
     color: #01baef;
     transition: all 300ms ease-in-out;
     transform: scale(1.125);
-}
+} */
 .head h1:active {
     transform: scale(0.75);
 }

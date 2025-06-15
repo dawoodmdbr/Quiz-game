@@ -16,8 +16,6 @@ const questionP = document.querySelector(".question p");
 const answers = document.querySelector(".answers");
 const ans = document.querySelectorAll(".ans");
 const nextBtn = document.querySelector(".next-btn");
-const explain = document.querySelector(".quiz-explain");
-const explainP = explain.querySelector("p");
 const qCountBoxes = document.querySelectorAll(".q-count");
 const timers = document.querySelectorAll(".timer");
 
@@ -38,7 +36,6 @@ function loadQuestion() {
     const q = questions[index];
     questionH.textContent = `Question ${questionIndex + 1}`;
     questionP.textContent = q.question;
-    explain.style.display = "none";
     nextBtn.style.display = "none";
 
     ans.forEach((btn, i) => {
@@ -71,14 +68,12 @@ function handleAnswer(e) {
         playSound("wrong");
     }
 
-    explainP.textContent = questions[index].explanation;
-    explain.style.display = "block";
     nextBtn.style.display = "block";
     stopTimer();
 }
 
 function startTimer() {
-    let timeLeft = 15;
+    let timeLeft = 30;
     timers.forEach((timer) => {
         timer.textContent = `${timeLeft}s`;
     });
@@ -92,7 +87,6 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             lockAnswers();
-            showExplain();
         }
     }, 1000);
 }
@@ -101,16 +95,11 @@ function stopTimer() {
     clearInterval(timerInterval);
 }
 
-function showExplain() {
-    explainP.textContent = questions[index].explanation;
-    explain.style.display = "block";
-    nextBtn.style.display = "block";
-}
-
 function lockAnswers() {
     const correctIndex = questions[index].correctIndex;
     ans[correctIndex].classList.add("correct");
     qCountBoxes[questionIndex].classList.add("wrong");
+    nextBtn.style.display = "block";
 }
 
 function playSound(name) {
@@ -132,10 +121,9 @@ function endQuiz() {
     questionP.textContent = "";
     answers.style.display = "none";
     nextBtn.style.display = "none";
-    explainP.textContent = `You answered ${
-        document.querySelectorAll(".q-count.correct").length
-    } correctly.`;
-    explain.style.display = "block";
+    timers.forEach((timer) => {
+        timer.style.display = "none";
+    });
 }
 
 loadQuestion();
@@ -155,11 +143,16 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
-
-
 function applyThemeBasedOnSystem() {
-  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  document.body.classList.add(isDark ? 'dark': 'light');
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.body.classList.add(isDark ? "dark" : "light");
 }
 
 //applyThemeBasedOnSystem();
+
+{
+    let count = questions.filter((q) => q.options.length === 4).length;
+    console.log("Questions with exactly 4 options:", count);
+    console.log("Total questions:", questions.length);
+    
+}
