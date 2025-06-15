@@ -1,3 +1,15 @@
+# Put questions in questions.txt in the format:
+# #Q Question text  
+# ^ Correct answer
+# A Option A text
+# B Option B text
+# C Option C text
+# D Option D text
+# The script will convert this to a JavaScript file with an array of question objects.
+# Line 59, write the output file name
+
+
+
 import json
 import re
 import os
@@ -43,8 +55,8 @@ def save_as_js(questions, output_file):
 
 if __name__ == "__main__":
     folder = os.path.dirname(__file__)
-    input_file = os.path.join(folder, "general.txt")  # or change "general.txt" to your txt filename
-    output_file = os.path.join(folder, "converted_questions.js")
+    input_file = os.path.join(folder, "questions.txt")
+    output_file = os.path.join(folder, "animals.js")
 
     if not os.path.exists(input_file):
         print("❌ File not found:", input_file)
