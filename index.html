@@ -11,17 +11,26 @@
             <h1>TheMDBR</h1>
         </div>
 
-        <div class="btn" style="display: none;">
+        <div class="btn">
             <a href="Assets/HTML/quiz.html">Start Quiz</a>
         </div>
 
         <script>
             setTimeout(() => {
                 const btn = document.querySelector(".btn");
+                const link = btn.querySelector("a");
                 btn.style.display = "flex";
-                btn.querySelector("a").style.animation =
-                    "start 500ms ease-in-out forwards";
-            }, 2500);
+                link.classList.add("start-show");
+
+                btn.scrollIntoView({ behavior: "smooth" });
+            }, 2000);
+            function applyThemeBasedOnSystem() {
+                const isDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+                document.body.classList.add(isDark ? "dark" : "light");
+            }
+            applyThemeBasedOnSystem();
         </script>
     </body>
 </html>

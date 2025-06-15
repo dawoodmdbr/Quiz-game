@@ -26896,7 +26896,7 @@ const questions = [
     "correctIndex": 1
   },
   {
-    "question": "The normal body temperature is 37.5 \u00c2\u00baC.",
+    "question": "The normal body temperature is 37.5 \u00baC.",
     "options": [
       "False",
       "True"
