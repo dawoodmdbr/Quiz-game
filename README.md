@@ -77,9 +77,9 @@ mdbr-quiz/
 
 ---
 
-## 📸 Screenshots
+## 📸 GIFs
 
-*Coming soon... maybe when I stop procrastinating 😉*
+![MDBR Quiz Demo](./Assets/demo.gif)
 
 ---
 
