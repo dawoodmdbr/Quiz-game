@@ -107,6 +107,7 @@ function startTimer() {
 }
 
 function lockAnswers() {
+    playSound("wrong");
     const ans = document.querySelectorAll(".ans");
     const correctIndex = questions[index].correctIndex;
     ans.forEach((btn) => (btn.disabled = true));
